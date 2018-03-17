@@ -56,14 +56,14 @@ class LinkedList
 
   def to_s
     @list.each_with_index do |node, index|
-  	  print "#{node.value} -> "
-  	  puts "nil" if node.next_node == nil 
+      print "#{node.value} -> "
+      puts "nil" if node.next_node == nil 
     end
   end
 
   def update_node_links(index=0)
     @list[index...-1].each_with_index do |node, nodes_index|
-  	  node.next_node = @list[nodes_index + 1]
+      node.next_node = @list[nodes_index + 1]
     end
   end
 
