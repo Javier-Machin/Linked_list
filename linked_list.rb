@@ -1,7 +1,7 @@
 class LinkedList
   
   def initialize
-  	@list = []
+    @list = []
   end
 
   def append(data=nil)
@@ -11,18 +11,18 @@ class LinkedList
   end
 
   def prepend(data=nil)
-  	@list.unshift(Node.new(data))
-  	update_node_links
+    @list.unshift(Node.new(data))
+    update_node_links
   end
 
   def insert_at(index, data=nil)
-  	@list.insert(index, Node.new(data))
-  	update_node_links(index)
+    @list.insert(index, Node.new(data))
+    update_node_links(index)
   end
 
   def remove_at(index)
-  	@list.delete_at(index)
-  	update_node_links(index)
+    @list.delete_at(index)
+    update_node_links(index)
   end
 
   def size
@@ -30,41 +30,41 @@ class LinkedList
   end
 
   def head
-  	@list[0]
+    @list[0]
   end
 
   def tail
-  	@list[-1]
+    @list[-1]
   end
 
   def at(index)
-  	@list[index]
+    @list[index]
   end
 
   def pop
-  	@list.pop
+    @list.pop
   end
 
   def contains?(data)
-  	@list.each { |node| return true if node.value == data }
+    @list.each { |node| return true if node.value == data }
   end
 
   def find(data)
-  	@list.each_with_index { |node, index| return index if node.value == data }
-  	nil
+    @list.each_with_index { |node, index| return index if node.value == data }
+    nil
   end
 
   def to_s
-  	@list.each_with_index do |node, index|
+    @list.each_with_index do |node, index|
   	  print "#{node.value} -> "
   	  puts "nil" if node.next_node == nil 
-  	end
+    end
   end
 
   def update_node_links(index=0)
     @list[index...-1].each_with_index do |node, nodes_index|
   	  node.next_node = @list[nodes_index + 1]
-  	end
+    end
   end
 
 end
@@ -73,7 +73,7 @@ class Node
   attr_accessor :value, :next_node
 
   def initialize(data=nil)
-  	@value = data
+    @value = data
     @next_node = nil
   end
 
